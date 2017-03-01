@@ -1,2 +1,2 @@
-# OpenMP/CL Learning
-Learning OpenMP and OpenCL programming based on tutorial and books read.
+# OpenMP Learning
+Learning OpenMP programming based on tutorials and books read.

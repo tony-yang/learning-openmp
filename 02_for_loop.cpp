@@ -14,12 +14,9 @@ int main(int argc, char *argv[]) {
 
   chunk = CHUNKSIZE;
 
-  #pragma omp parallel shared(a, b, c, chunk) private(i)
-  {
-    #pragma omp for schedule(dynamic, chunk) nowait
-    for (i = 0; i < N; i++) {
-      c[i] = a[i] + b[i];
-    }
+  #pragma omp parallel for shared(a, b, c, chunk) private(i) schedule(dynamic, chunk)
+  for (i = 0; i < N; i++) {
+    c[i] = a[i] + b[i];
   }
 
   for (i = 0; i < N; i++) {
